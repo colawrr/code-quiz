@@ -1,13 +1,15 @@
 var question = document.querySelector('#question');
 var choices = Array.from(document.querySelectorAll('.answer-text'));
 var scoreText = document.querySelector('#score');
+//var timer = document.querySelector('#timer')
+//var answer = document.querySelector('#answer-text')
 
 
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0 
 let questionCounter = 0
-let availableQuestions =[]
+let availableQuestions = []
 
 let questions = [
     {
@@ -48,7 +50,7 @@ const MAX_QUESTIONS = 4
 const SCORE_POINTS = 100
 
 startQuiz = () => {
-    questionCounter = 0
+    questionCounter = 1
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
@@ -74,7 +76,7 @@ choices.forEach(choice => {
     choice.innerText = currentQuestion['choice' + number]
 })
 
-//availableQuestions.splice(questionsIndex, 1)
+availableQuestions.splice(questionsIndex, 1)
 
 acceptingAnswers = true
 }
@@ -90,7 +92,7 @@ choices.forEach(choice => {
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
         if(classToApply === 'correct') {
-            incrementScore()
+            incrementScore(SCORE_POINTS)
         }
         selectedChoice.parentElement.classList.add(classToApply)
 
@@ -104,6 +106,7 @@ choices.forEach(choice => {
 
 incrementScore = num => {
     score +=num
+    scoreText.innerText = score
 }
 
 startQuiz()
