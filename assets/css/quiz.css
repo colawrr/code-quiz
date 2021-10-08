@@ -1,0 +1,41 @@
+body {
+    color: #fff;
+}
+
+.answer-container {
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 15px;
+    background: coral;
+}
+
+.answer-container:hover {
+    box-shadow: 0 10px 20px 0 rgba(255, 255 ,255, 0.6);
+    transform: scale(1.02);
+}
+
+.answer-choice {
+    padding: 15px 25px;
+    color: white;
+}
+
+.answer-text {
+    padding: 15px;
+    width: 100%;
+}
+
+.correct {
+    background: rgba(green, green, green, 0);
+}
+.incorrect {
+    background: rgba(red, red, red, 100%);
+}
+
+@media screen and (max-width: 768px) {
+    .answer-container {
+        min-width: 40%;
+    }
+}
+    
