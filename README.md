@@ -9,4 +9,6 @@ there are 3 css and js pages
 I could not figure out how to get the timer to work..
 as well as I could not figure out why my leaderboard wasn't populating when i saved a score and a name..
 
+https://colawrr.github.io/code-quiz/
+
 ![screenshot](/screenshot/IMG_2656.jpg)
