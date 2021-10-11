@@ -1,7 +1,7 @@
 var question = document.querySelector('#question');
 var choices = Array.from(document.querySelectorAll('.answer-text'));
 var scoreText = document.querySelector('#score');
-var count = document.querySelector('#timer');
+//var count = document.querySelector('#timer');
 //var timer = 15;
 
 
@@ -47,14 +47,13 @@ let questions = [
 ]
 
 
-const TIMER = 75000
+
 const MAX_QUESTIONS = 4
 const SCORE_POINTS = 100
 
 startQuiz = () => {
     questionCounter = 1
     score = 0
-    //timer = 75000
     availableQuestions = [...questions]
     getNewQuestion()
 }
@@ -63,7 +62,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
-        return window.location.assign('/end.html')
+        return window.location.assign('./end.html')
     }
 
 
