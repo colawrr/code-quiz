@@ -1,8 +1,8 @@
 var question = document.querySelector('#question');
 var choices = Array.from(document.querySelectorAll('.answer-text'));
 var scoreText = document.querySelector('#score');
-//var timer = document.querySelector('#timer')
-//var answer = document.querySelector('#answer-text')
+var count = document.querySelector('#timer');
+//var timer = 15;
 
 
 let currentQuestion = {}
@@ -14,10 +14,10 @@ let availableQuestions = []
 let questions = [
     {
         question: 'What color is the sky?', 
-        choice1: 'red',
-        choice2: 'green',
-        choice3: 'blue',
-        choice4: 'yellow',
+        choice1: 'Red',
+        choice2: 'Green',
+        choice3: 'Blue',
+        choice4: 'Yellow',
         answer: 3,
     },
     {
@@ -46,12 +46,15 @@ let questions = [
     }
 ]
 
+
+const TIMER = 75000
 const MAX_QUESTIONS = 4
 const SCORE_POINTS = 100
 
 startQuiz = () => {
     questionCounter = 1
     score = 0
+    //timer = 75000
     availableQuestions = [...questions]
     getNewQuestion()
 }
@@ -65,6 +68,7 @@ getNewQuestion = () => {
 
 
 questionCounter++
+
 
 
 const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
@@ -100,7 +104,7 @@ choices.forEach(choice => {
             selectedChoice.parentElement.classList.remove(classToApply)
             getNewQuestion()
 
-        }, 1000)
+        }, 1200)
     })
 })
 
@@ -108,5 +112,7 @@ incrementScore = num => {
     score +=num
     scoreText.innerText = score
 }
+
+
 
 startQuiz()

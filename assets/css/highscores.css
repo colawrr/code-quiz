@@ -3,7 +3,8 @@ body {
 }
 
 #highScoresList {
-    list-style: none;
+    color: #fff;
+    list-style: bullets;
     margin-bottom: 15px;
 }
 
